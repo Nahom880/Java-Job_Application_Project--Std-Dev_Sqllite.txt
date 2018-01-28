@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview Calendar App</title>
+    <!-- below this is the links for the modal -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- above this is the links for the modal -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
+
+    <!-- table library -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" media="screen" title="no title">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" media="screen" title="no title">
+        <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+
+    <h1>Interview Calendar Application</h1>
+
+
+
+    <button type="button" class = "btn btn-primary btn-lg" name="button" id="addEventBtn">Add Event</button>
+    <br>
+    <br>
+
+    <!-- Search FORM -->
+    <form class="form-inline" >
+      <input type="text" class="form-control" id="searchF" placeholder="Search for your Events">
+      <button class="btn btn-primary"  id="searchBtn" name="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Submit</button>
+    </form>
+    <br>
+    <br>
+    <!-- end of search FORM -->
+
+    <!-- hidden buttons for add and cancel -->
+    <div class="hiddenBtns">
+      <button type="submit" class= "btn btn-lg btn-success" form = "form1" id="submitFormbtn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Add</button>
+
+      <button type="button" class="btn btn-lg btn-default" name="button" id="cancelBtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  Cancel</button>
+    </div>
+    <!-- end of hidden buttons "Add" and "cancel" -->
+
+    <br>
+    <br>
+
+    <!-- form for adding events (hidden) -->
+    <div class="" id = "addEventForm">
+      <form id = "form1" class="form center-block" action="/calendersave" method="POST">
+        <div class="form-group">
+          <input type="date" class="form-control " placeholder="date" name="date">
+        </div>
+
+        <div class="form-group">
+          <input type="time" class="form-control " placeholder="time" name="time">
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control input-lg" placeholder="description" name="description">
+        </div>
+      </form>
+    </div>
+    <!-- end of adding events form -->
+
+    <!-- table showing searched appointments -->
+      <div class="container" id="searchTerm">
+        <table class="eventTable">
+          <thead>
+             <tr>
+                 <th>Date</th>
+                 <th>Time (24h)</th>
+                 <th> Description</th>
+             </tr>
+         </thead>
+        </table>
+      </div>
+    <!-- end of table showing appointments -->
+
+</div> <!-- end of container -->
+</body>
+</html>
